@@ -28,10 +28,7 @@ jobs:
       run: |
         python update_html.py
 
-    - name: Push changes
-      run: |
-        git config --global user.email "action@github.com"
-        git config --global user.name "GitHub Action"
-        git add index.html
-        git commit -m "Update index.html with latest commit message"
-        git push origin main
+    - name: Commit & Push changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
