@@ -9,7 +9,7 @@ repo = g.get_repo(os.getenv("GITHUB_REPOSITORY"))
 commit = repo.get_commit(os.getenv("COMMIT_SHA"))
 message = commit.commit.message
 
-path = dt_now + ".md"
+path = str(dt_now) + ".md"
 
 f = open(path,'w')
 f.write(message)
