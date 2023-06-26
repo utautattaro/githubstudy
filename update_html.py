@@ -6,7 +6,7 @@ repo = g.get_repo(os.getenv("GITHUB_REPOSITORY"))
 commit = repo.get_commit(os.getenv("COMMIT_SHA"))
 message = commit.commit.message
 
-path = "log.txt"
+path = "./log/log.txt"
 
 f = open(path,'w')
 f.write(message)
